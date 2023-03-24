@@ -6,13 +6,14 @@ export const config = {
 export default async function handler(req) {
   const DataList: Array<any> = [];
   // 发起一个post请求
-  axios({
+ const data = await axios({
     method: 'post',
     url: 'http://bigerfe.com',
     data: {
       firstName: 'Fred',
       lastName: 'Flintstone'
-    }
+    },
+    responseType:'text'
   });
   for(let i=0;i<100;i++){
     DataList.push({
@@ -20,5 +21,5 @@ export default async function handler(req) {
       name: `menuname ${i}`
     })
   }
-  return response(DataList);
+  return response(data);
 }
