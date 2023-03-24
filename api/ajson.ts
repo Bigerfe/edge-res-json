@@ -7,8 +7,8 @@ export default async function handler(req) {
   const DataList: Array<any> = [];
   // 发起一个post请求
  const data = await axios({
-    method: 'post',
-    url: 'http://bigerfe.com',
+    method: 'get',
+    url: 'https://developers.weixin.qq.com/community/homepage',
     data: {
       firstName: 'Fred',
       lastName: 'Flintstone'
